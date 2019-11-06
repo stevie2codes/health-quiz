@@ -1,0 +1,22 @@
+body{
+    margin:0;
+    padding:0;
+    background-size: cover;
+   background-image: url("/assets/images/brooke-lark-08bOYnH_r_E-unsplash.jpg");
+    box-sizing: border-box;
+    background-repeat: no-repeat;   
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.name{
+    font-family: 'Purple Purse', cursive;
+    letter-spacing: 5px;
+}
+
+#apple{
+    width:100px;
+    margin: 0 auto;
+    display: flex;
+}
