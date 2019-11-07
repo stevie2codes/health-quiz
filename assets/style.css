@@ -68,23 +68,29 @@ body{
 }
 
 #leader-board{
-    background-color:rgba(124,152,133,0.6); 
     font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
     left:10px;
-    padding:4px;
-    border-radius: 5px;
+    font-weight: bolder;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 #leader-board:hover{
     cursor: pointer;
 }
 
 #timer{
+    font-weight: bolder;
+    display: inline-flex;
+    flex-wrap: wrap;
+    letter-spacing: 1px;
     position: absolute;
     top: 10px;
-    right:20px;
+    right:50px;
+    font-family: 'Raleway', sans-serif;
 }
 
 
