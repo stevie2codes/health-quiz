@@ -13,7 +13,7 @@ body{
 
 .name{
     font-family: 'Purple Purse', cursive;
-    letter-spacing: 6px;
+    letter-spacing: 7px;
     font-size: 4.6vw;
     clear: both;
     display: inline-block;
@@ -39,13 +39,19 @@ body{
  #start{
     margin-bottom: 30px;
     background-color:rgba(124,152,133,0.6);
-    width: 20vw;
+    width: 17vw;
     padding: 6px;
     border-radius: 100px;
     font-family: 'Purple Purse', cursive;
-    letter-spacing: 1vw;
+     letter-spacing: 0.2vw; 
     box-shadow: 0px 0px 10px rgba(124,152,133,0.6);
     border:none;  
+}
+
+#start:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all ease-in 250ms;
 }
 
 #main-text{
@@ -61,5 +67,24 @@ body{
     flex-wrap: wrap;
 }
 
+#leader-board{
+    background-color:rgba(124,152,133,0.6); 
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    padding:4px;
+    border-radius: 5px;
+}
+#leader-board:hover{
+    cursor: pointer;
+}
+
+#timer{
+    position: absolute;
+    top: 10px;
+    right:20px;
+}
 
 
