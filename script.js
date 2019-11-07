@@ -27,7 +27,23 @@ const  questions = [
 ];
 
 
-function beginQuiz()
+function beginQuiz(){
+   let timeLeft = 90;
+
+   let timeInterval = setInterval(function(){
+    timer.textContent = `Count Down: ${timeLeft}`;
+    timeLeft--;
+    start.style.display = "none";
+    text.textContent = questions[0].question;
+   
+
+
+    if(timeLeft === 0){
+        timer.textContent = "TIME UP!";
+        clearInterval(timeInterval);
+    }
+   },1000)
+}
 
 
 
