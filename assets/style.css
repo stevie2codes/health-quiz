@@ -69,7 +69,7 @@ body{
 
 #leader-board{
     font-family: 'Raleway', sans-serif;
-    text-decoration: underline;
+    text-decoration: underline double rgba(124,152,133,0.5) ;
     letter-spacing: 1px;
     position: absolute;
     top: 10px;

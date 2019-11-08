@@ -1,34 +1,32 @@
 const timer = document.getElementById("timer");
 const text = document.getElementById("main-text");
-
+const quiz = document.getElementById("quiz");
 const start = document.getElementById("start");
+const question = document.getElementById("question");
+const progress = document.getElementById("progress");
+
+const choiceA = document.getElementById('A');
+const choiceA = document.getElementById('B');
+const choiceA = document.getElementById('C');
+const choiceA = document.getElementById('D');
+
 
 const  questions = [
     {
-        question: "What Vitamin is important for bone health?",
-        answers: {
-            a: "Vitamin C",
-            b: "Vitamin D",
-            c: "Vitamin A",
-            d: "Vitamin B"
-        },
-        correctAnswer: "b"
+        title: "What is an important Vitamin for bone Health?",
+        choices: ["Vitamin A", "Vitamin D", "Vitamin C", "Vitamin B"],
+        answers: "Vitamin D"
     },
     {
-         question:"What percentage of the world is Obese?",
-         answer: {
-             a: "10%",
-             b: "40%",
-             c: "30%",
-             d: "20%"
-         },
-         correctAnswer: "c"
+        title: "What percentage of the worlds population is Obese?",
+        choices: ["60%", "20%", "15%", "30%"],
+        answers: "30%"
     }
 ];
-
+    
 
 function beginQuiz(){
-   let timeLeft = 90;
+   let timeLeft = 75;
 
    let timeInterval = setInterval(function(){
     timer.textContent = `Count Down: ${timeLeft}`;
@@ -36,8 +34,6 @@ function beginQuiz(){
     start.style.display = "none";
     text.textContent = questions[0].question;
    
-
-
     if(timeLeft === 0){
         timer.textContent = "TIME UP!";
         clearInterval(timeInterval);

@@ -20,6 +20,17 @@
  <div id="box">
     <h6 id="leader-board">Leader Board</h6>
      <h6 id="timer"></h6>
+     <div id="quiz"style = "display:none;">
+     <div id="question"><p>Question</p></div>
+     </div>
+     <div id="choices">
+         <div class="choice"id="A" onclick="checkAnswer('a')" >A</div>
+         <div class="choice"id="B" onclick="checkAnswer('b')" >B</div>
+         <div class="choice"id="C" onclick="checkAnswer('c')" >C</div>
+         <div class="choice"id="D" onclick="checkAnswer('d')" >D</div>
+     </div>
+     <div id="progress"><div class="prog"></div>
+    </div>
      <p id="main-text">Try to answer the Health related questions within the time limit.
          Keep in mind that incorrect answers will penalize your score
      </p>
