@@ -22,8 +22,8 @@ body{
 }
 
 #box{
-    width:50vw;
-    height: 70vh;
+    width:55vw;
+    height: 65vh;
     margin-right: 50px;
     background-color:rgba(254,152,93,0.3);
     border-radius: 5px;
@@ -93,4 +93,24 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
+
+#quiz{
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top: 90px;
+    font-size: 1.5rem;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+#choices{
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top: 220px;
+    font-size: 1.2rem;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
 

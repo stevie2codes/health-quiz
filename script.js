@@ -6,24 +6,50 @@ const question = document.getElementById("question");
 const progress = document.getElementById("progress");
 
 const choiceA = document.getElementById('A');
-const choiceA = document.getElementById('B');
-const choiceA = document.getElementById('C');
-const choiceA = document.getElementById('D');
+const choiceB = document.getElementById('B');
+const choiceC = document.getElementById('C');
+const choiceD = document.getElementById('D');
+
+
+
 
 
 const  questions = [
     {
-        title: "What is an important Vitamin for bone Health?",
-        choices: ["Vitamin A", "Vitamin D", "Vitamin C", "Vitamin B"],
-        answers: "Vitamin D"
+        question: "What is an important Vitamin for bone Health?",
+        choiceA: "Vitamin A",
+        choiceB: "Vitamin B",
+        choiceC: "Vitamin C",
+        choiceD: "Vitamin D",
+        correct: "D"
     },
     {
-        title: "What percentage of the worlds population is Obese?",
-        choices: ["60%", "20%", "15%", "30%"],
-        answers: "30%"
+        question: "What percentage of the world is Obese?",
+        choiceA: "10%",
+        choiceB: "20%",
+        choiceC: "30%",
+        choiceD: "40%",
+        correct: "C"
     }
 ];
-    
+ 
+const lastQuestion = questions.length -1;
+let runningQuestion = 0;
+
+
+function renderQuestion(){
+    let q = questions[runningQuestion];
+    question.innerHTML = "<p>"+q.question+"</p>";
+
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
+    choiceD.innerHTML = q.choiceD;
+}
+
+
+
+
 
 function beginQuiz(){
    let timeLeft = 75;
@@ -32,7 +58,9 @@ function beginQuiz(){
     timer.textContent = `Count Down: ${timeLeft}`;
     timeLeft--;
     start.style.display = "none";
-    text.textContent = questions[0].question;
+    text.style.display = "none";
+    quiz.style.display = "block";
+    renderQuestion();
    
     if(timeLeft === 0){
         timer.textContent = "TIME UP!";
@@ -41,7 +69,7 @@ function beginQuiz(){
    },1000)
 }
 
-
+    
 
 
 start.addEventListener('click', beginQuiz);
