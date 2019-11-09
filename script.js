@@ -2,17 +2,14 @@ const timer = document.getElementById("timer");
 const text = document.getElementById("main-text");
 const quiz = document.getElementById("quiz");
 const start = document.getElementById("start");
-const question = document.getElementById("question");
-const progress = document.getElementById("progress");
-
+let question = document.getElementById("question");
+let progress = document.getElementById("progress");
+const choices = document.getElementById("choices");
 const choiceA = document.getElementById('A');
 const choiceB = document.getElementById('B');
 const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
-
-
-
-
+let score = 0;
 
 const  questions = [
     {
@@ -21,7 +18,7 @@ const  questions = [
         choiceB: "Vitamin B",
         choiceC: "Vitamin C",
         choiceD: "Vitamin D",
-        correct: "D"
+        correct: "d"
     },
     {
         question: "What percentage of the world is Obese?",
@@ -29,7 +26,7 @@ const  questions = [
         choiceB: "20%",
         choiceC: "30%",
         choiceD: "40%",
-        correct: "C"
+        correct: "c"
     }
 ];
  
@@ -48,11 +45,28 @@ function renderQuestion(){
 }
 
 
+function checkAnswer(answer){
+    
+    if(answer == questions[runningQuestion].correct){
+        choiceD.style.backgroundColor = "green";
+        score+= 20;
+        progress.textContent = `Correct! You have ${score} points!`
+    } else{
+        timeLeft -= 10;
+        choiceA.style.backgroundColor = "red";
+        choiceB.style.backgroundColor = "red";
+        choiceC.style.backgroundColor = "red";
+        choiceD.style.backgroundColor = "red";
+        progress.textContent = `Incorrect! You have ${score} points!`
+
+    
+    }
+}
 
 
-
+let timeLeft = 75;
 function beginQuiz(){
-   let timeLeft = 75;
+   
 
    let timeInterval = setInterval(function(){
     timer.textContent = `Count Down: ${timeLeft}`;
@@ -60,7 +74,8 @@ function beginQuiz(){
     start.style.display = "none";
     text.style.display = "none";
     quiz.style.display = "block";
-    renderQuestion();
+    choices.style.display = "block";
+   renderQuestion();
    
     if(timeLeft === 0){
         timer.textContent = "TIME UP!";

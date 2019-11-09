@@ -23,7 +23,7 @@ body{
 
 #box{
     width:55vw;
-    height: 65vh;
+    height: 80vh;
     margin-right: 50px;
     background-color:rgba(254,152,93,0.3);
     border-radius: 5px;
@@ -112,5 +112,29 @@ body{
     text-align:center;
     justify-content: center;
     align-items: center;
+}
+
+#A,#B,
+#C,#D{
+    background-color:rgba(124,152,133,0.6);
+    border-radius: 100px;
+    margin: 18px;
+    padding: 1px;
+    width: 150px;
+    border:2px solid darkgrey;
+    display: inline-flex;
+    text-align: center;
+    text-align:center;
+    justify-content: center;
+
+}
+
+#A:hover,#B:hover,
+#C:hover,#D:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px rgba(124,152,133,0.5);
+    background-color:rgba(124,152,133,0.2);
+    transform: scale(1.03);
+    transition: all ease-in 150ms;
 }
 
