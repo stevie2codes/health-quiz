@@ -48,18 +48,16 @@ function renderQuestion(){
 function checkAnswer(answer){
     
     if(answer == questions[runningQuestion].correct){
-        choiceD.style.backgroundColor = "green";
+        choiceD.style.backgroundColor = "springGreen";
         score+= 20;
         progress.textContent = `Correct! You have ${score} points!`
     } else{
         timeLeft -= 10;
-        choiceA.style.backgroundColor = "red";
-        choiceB.style.backgroundColor = "red";
-        choiceC.style.backgroundColor = "red";
-        choiceD.style.backgroundColor = "red";
+        choiceA.style.backgroundColor = "#e14b32";
+        choiceB.style.backgroundColor = "#e14b32";
+        choiceC.style.backgroundColor = "#e14b32";
+        choiceD.style.backgroundColor = "springGreen"
         progress.textContent = `Incorrect! You have ${score} points!`
-
-    
     }
 }
 

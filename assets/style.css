@@ -57,12 +57,14 @@ body{
 #main-text{
     margin: auto 10px;
     text-align: center;
-    top: 50px;
+    top: 70px;
     position: absolute;
+    font-size: 2rem;
+    line-height: 10px;
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
-    letter-spacing: 2px;
-    line-height: 30px;
+    letter-spacing: 3px;
+    line-height: 55px;
     display:flex;
     flex-wrap: wrap;
 }
@@ -83,14 +85,15 @@ body{
 }
 
 #timer{
-    font-weight: bolder;
+    color: #e14b32;
     display: inline-flex;
     flex-wrap: wrap;
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
     right:50px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Purple Purse', cursive;
+    font-size: 1.3rem;
 }
 
 
@@ -138,3 +141,10 @@ body{
     transition: all ease-in 150ms;
 }
 
+#progress{
+    position: absolute;
+    bottom: 50px;
+    font-family: 'Purple Purse', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
