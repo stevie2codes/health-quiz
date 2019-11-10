@@ -9,9 +9,12 @@ const choiceA = document.getElementById('A');
 const choiceB = document.getElementById('B');
 const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
+const next = document.getElementById("next");
+const prog = document.querySelector(".prog");
+
 let score = 0;
 
-const  questions = [
+const questions = [
     {
         question: "What is an important Vitamin for bone Health?",
         choiceA: "Vitamin A",
@@ -21,68 +24,99 @@ const  questions = [
         correct: "d"
     },
     {
-        question: "What percentage of the world is Obese?",
+        question: "What percentage of the world is considered Obese?",
         choiceA: "10%",
         choiceB: "20%",
         choiceC: "30%",
         choiceD: "40%",
         correct: "c"
+    },
+    {
+        question: "To lose 1 pound of Fat you need to burn roughly how many calories?",
+        choiceA: "2,800",
+        choiceB: "3,500",
+        choiceC: "5,000",
+        choiceD: "2,900",
+        correct: "b"
+    },
+    {
+        question: "Drinking this many glasses of water a day can reduce your chances of a heart attack by 40%",
+        choiceA: "5",
+        choiceB: "2",
+        choiceC: "9",
+        choiceD: "1",
+        correct: "a"
+    },
+    {
+        question: "Which fruit contains more Vitamin C than oranges",
+        choiceA: "Apples",
+        choiceB: "Peaches",
+        choiceC: "raspberrys",
+        choiceD: "pear",
+        correct: "c"
     }
 ];
- 
-const lastQuestion = questions.length -1;
+
+const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
 
-function renderQuestion(){
+function renderQuestion() {
     let q = questions[runningQuestion];
-    question.innerHTML = "<p>"+q.question+"</p>";
-
+    question.innerHTML = "<p>" + q.question + "</p>";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
 }
 
+function nextQuestion(){
+    runningQuestion++;
+}
 
-function checkAnswer(answer){
-    
-    if(answer == questions[runningQuestion].correct){
-        choiceD.style.backgroundColor = "springGreen";
-        score+= 20;
-        progress.textContent = `Correct! You have ${score} points!`
-    } else{
-        timeLeft -= 10;
-        choiceA.style.backgroundColor = "#e14b32";
-        choiceB.style.backgroundColor = "#e14b32";
-        choiceC.style.backgroundColor = "#e14b32";
-        choiceD.style.backgroundColor = "springGreen"
-        progress.textContent = `Incorrect! You have ${score} points!`
+function isCorrect(){
+        score += 20
+        prog.textContent = `Correct!`;
+        
+        next.style.display = "block";
+}
+function isWrong(){
+    timeLeft -= 10;
+    progress.textContent = `Incorrect!`
+    next.style.display = "block";
+}
+
+
+function checkAnswer(answer) {
+
+    if (answer == questions[runningQuestion].correct) {
+        isCorrect();  
+    } else {
+        isWrong();    
     }
 }
 
 
 let timeLeft = 75;
-function beginQuiz(){
-   
+function beginQuiz() {
+    let timeInterval = setInterval(function () {
+        timer.textContent = `Count Down: ${timeLeft}`;
+        timeLeft--;
+        start.style.display = "none";
+        text.style.display = "none";
+        quiz.style.display = "block";
+        choices.style.display = "block";
+        progress.textContent = `Score: ${score}`;
+        renderQuestion();
 
-   let timeInterval = setInterval(function(){
-    timer.textContent = `Count Down: ${timeLeft}`;
-    timeLeft--;
-    start.style.display = "none";
-    text.style.display = "none";
-    quiz.style.display = "block";
-    choices.style.display = "block";
-   renderQuestion();
-   
-    if(timeLeft === 0){
-        timer.textContent = "TIME UP!";
-        clearInterval(timeInterval);
-    }
-   },1000)
+        if (timeLeft === 0) {
+            timer.textContent = "TIME UP!";
+            clearInterval(timeInterval);
+        }
+    }, 1000)
 }
 
-    
 
 
+next.addEventListener("click",nextQuestion);
 start.addEventListener('click', beginQuiz);
