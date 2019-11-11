@@ -64,22 +64,23 @@ body{
        transform: scale(0.9);
 }
 }
+#start:focus{
+    outline: none;
+}
 
 #start:hover{
     cursor: pointer;
 }
 
 #main-text{
-    margin: auto 10px;
+    margin: -300px auto;
     text-align: center;
-    top: 7vh;
     position: absolute;
     font-size: 3vw;
     line-height: 50px;
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
     letter-spacing: 5px;
-    
     display:flex;
     flex-wrap: wrap;
 }
@@ -162,33 +163,45 @@ body{
 
 #progress{
     position: absolute;
-    left: 10px;
+    margin: 0 auto;
     font-family: 'Purple Purse', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 3px;
 }
 
-#next{
-    font-size: 50px;
-    color: rgba(124,152,133,1);
-    position: absolute;
-    right:10px;
+#reset{
+    
+    font-size: 1.5rem;
+    margin-bottom: 450px;
+    background-color:rgba(124,152,133,0.6);
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+    padding: 6px;
+    border-radius: 100px;
+    font-family: 'Purple Purse', cursive;
+    letter-spacing: 0.3vw; 
+    box-shadow: 0px 0px 10px rgba(124,152,133,0.6);
+    border: 1px solid bisque;
 }
-#next:hover{
+#reset:hover{
     cursor: pointer;
-    color: rgba(124,152,133,0.5);
+    /* color: rgba(124,152,133,0.5); */
     transform: rotate(360deg);
     transition: all ease 500ms;
+}
+#reset:focus{
+    outline: none;
 }
 
 
 #is-right{
     color: #b5d0af;
     position: absolute;
-    left: 30px;
+    left: 20px;
     bottom: 50px;
     font-family: 'Purple Purse', cursive;
-    font-size: 2.5vw;
+    font-size: 3vw;
     letter-spacing: 3px;
     text-shadow: 0px 0px 2px black;
 }
@@ -196,10 +209,10 @@ body{
 #is-wrong{
     color:#f76563;
     position: absolute;
-    right: 30px;
+    right: 20px;
     bottom: 50px;
     font-family: 'Purple Purse', cursive;
-    font-size: 2.5vw;
+    font-size: 3vw;
     letter-spacing: 3px;
     text-shadow: 0px 0px 2px black;
 }

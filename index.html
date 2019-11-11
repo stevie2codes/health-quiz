@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What The Health?</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Purple+Purse&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
 
     <div class="container">
         <div class="row col-9 d-flex justify-content-end mt-3">
             <div class="col-6 col-sm-6">
- <h1 class="name">What The Health?</h1>
- 
- <div id="box">
-    <h6 id="leader-board">Leader Board</h6>
-     <h6 id="timer"></h6>
-     <div id="quiz"style = "display:none">
-     <div id="question"><p>Question</p></div>
-     </div>
-     <div id="choices" style="display: none">
-         <div class="choice"id="A" onclick="checkAnswer('a')" ></div>
-         <div class="choice"id="B" onclick="checkAnswer('b')" ></div>
-         <div class="choice"id="C" onclick="checkAnswer('c')" ></div>
-         <div class="choice"id="D" onclick="checkAnswer('d')" ></div>
-     </div>
-     <div id="progress"><div class="prog" style="display: none"></div>
+                <h1 class="name">What The Health?</h1>
+
+                <div id="box">
+                    <h6 id="leader-board">Leader Board</h6>
+                    <h6 id="timer"></h6>
+                    <div id="quiz" style="display:none">
+                        <div id="question">
+                            <p>Question</p>
+                        </div>
+                    </div>
+                    <div id="choices" style="display: none">
+                        <div class="choice" id="A" onclick="checkAnswer('a')"></div>
+                        <div class="choice" id="B" onclick="checkAnswer('b')"></div>
+                        <div class="choice" id="C" onclick="checkAnswer('c')"></div>
+                        <div class="choice" id="D" onclick="checkAnswer('d')"></div>
+                    </div>
+                    <div id="progress">
+                        <div class="prog" style="display: none"></div>
+                    </div>
+                    <div id="is-right"></div>
+                    <div id="is-wrong"></div>
+                    <p id="main-text">Try to answer the Health related questions within the time limit.
+                        Keep in mind that incorrect answers will reduce your time.
+                    </p>
+                    <button id="start">Start Quiz!</button>
+                    <button id="reset" style="display:none" name="fastforward">Play Again!</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="is-right"></div>
-    <div id="is-wrong"></div>
-     <p id="main-text">Try to answer the Health related questions within the time limit.
-         Keep in mind that incorrect answers will reduce your time.
-     </p>
-     <button id="start">Start Quiz!</button>
-     <ion-icon id="next"style= "display:none" name="fastforward">Next question</ion-icon>
-    </div>
-</div>
-</div>
-</div>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
+
 </html>

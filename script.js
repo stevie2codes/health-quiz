@@ -9,12 +9,13 @@ const choiceA = document.getElementById('A');
 const choiceB = document.getElementById('B');
 const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
-let next = document.getElementById("next"), count = 0;
+let resetBtn = document.getElementById("reset");
 const isRight = document.getElementById("is-right");
 const wrong = document.getElementById("is-wrong");
 let timeLeft = 75;
 let score = 0;
 
+//Quiz Questions//
 const questions = [
     {
         question: "What is an important Vitamin for bone Health?",
@@ -75,10 +76,9 @@ function renderQuestion() {
     choiceD.innerHTML = q.choiceD;
     
 }
-
+//keeping count of amount of questions rendered
 function keepCount(){
-    if(runningQuestion < lastQuestion){
-        
+    if(runningQuestion < lastQuestion){   
         renderQuestion();
     }else{
         gameOver();
@@ -104,12 +104,14 @@ function checkAnswer(answer) {
     }
 }
 function gameOver(){ 
+    resetBtn.style.display = "block";
     quiz.style.display = "none";
     choices.style.display = "none";
     text.style.display = "block";
     text.textContent = `Game over! You got ${score}% of the questions right.`;
     timer.textContent = "TIME UP!";
-    clearInterval(timeInterval);
+    //  clearInterval(timeInterval);
+    
 }
 
 function beginQuiz() {
@@ -129,21 +131,22 @@ function beginQuiz() {
             gameOver();
             
         }
-    }, 1000)
+    }, 1000);
 }
 
+  function startOver(option){ 
+    confirm("Warning! You Will lose all progress if you dont save your progress");
+    if(option === true){
+        window.location.href  = "index.html";
+    }else{
+        window.location.href = "high-score.html"
+    }
+    
+         
+          }
 
 
 
 
-
-
-// function nextQuestion(){  
-//         runningQuestion++;
-//         }
-
-
-
-
-// next.addEventListener("click",nextQuestion);
+resetBtn.addEventListener('click',startOver);
 start.addEventListener('click', beginQuiz);
