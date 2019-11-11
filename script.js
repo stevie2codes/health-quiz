@@ -9,7 +9,7 @@ const choiceA = document.getElementById('A');
 const choiceB = document.getElementById('B');
 const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
-let next = document.getElementById("next"),count = 0;
+let next = document.getElementById("next"), count = 0;
 const isRight = document.getElementById("is-right");
 const wrong = document.getElementById("is-wrong");
 let timeLeft = 75;
@@ -56,10 +56,10 @@ const questions = [
         choiceD: "pear",
         correct: "c"
     },
-    
+
 ];
 
-const lastQuestion = questions.length ;
+const lastQuestion = questions.length;
 let runningQuestion = 0;
 
 
@@ -73,66 +73,77 @@ function renderQuestion() {
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
-
-    }
-
-
-function isCorrect(){
-        rightAnswer++;
-        score += 20
-        isRight.textContent = `Correct: ${rightAnswer}`;
-        next.style.display = "block";
+    
 }
-function isWrong(){
+
+function keepCount(){
+    if(runningQuestion < lastQuestion){
+        
+        renderQuestion();
+    }else{
+        gameOver();
+    }
+}
+
+function isCorrect() {
+    rightAnswer++;
+    runningQuestion++;
+    score += 20
+}
+function isWrong() {
     wrongAnswer++;
+    runningQuestion++;
     timeLeft -= 10;
-    wrong.textContent = `Incorrect: ${wrongAnswer}`;
-    next.style.display = "block";
 }
 
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
-        isCorrect();    
+        isCorrect();
     } else {
-        isWrong(); 
+        isWrong();
     }
 }
-
+function gameOver(){ 
+    quiz.style.display = "none";
+    choices.style.display = "none";
+    text.style.display = "block";
+    text.textContent = `Game over! You got ${score}% of the questions right.`;
+    timer.textContent = "TIME UP!";
+    clearInterval(timeInterval);
+}
 
 function beginQuiz() {
     let timeInterval = setInterval(function () {
         timer.textContent = `Count Down: ${timeLeft}`;
         timeLeft--;
+        isRight.textContent = `Correct: ${rightAnswer}`;
+        wrong.textContent = `Incorrect: ${wrongAnswer}`;
         start.style.display = "none";
         text.style.display = "none";
         quiz.style.display = "block";
         choices.style.display = "block";
         progress.textContent = `Score: ${score}`;
-        renderQuestion();
+        keepCount();
         if (timeLeft === 0) {
             clearInterval(timeInterval);
             gameOver();
-            timer.textContent = "TIME UP!";
-        } 
-            if(runningQuestion === lastQuestion){
-                clearInterval(timeInterval);
-                gameOver();
+            
         }
     }, 1000)
 }
-function nextQuestion(){  
-        runningQuestion++;  
-             gameOver();
-    }
-    
-function gameOver(){
-    if(wrongAnswer + rightAnswer > 5){
-    quiz.style.display = "none";
-    choices.style.display = "none";
-    text.style.display = "block";
-    text.textContent = `Game over! You got ${score}% of the questions right.`   
-}
-}
 
-next.addEventListener("click",nextQuestion);
+
+
+
+
+
+
+// function nextQuestion(){  
+//         runningQuestion++;
+//         }
+
+
+
+
+// next.addEventListener("click",nextQuestion);
 start.addEventListener('click', beginQuiz);
