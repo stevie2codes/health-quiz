@@ -9,9 +9,9 @@ const choiceA = document.getElementById('A');
 const choiceB = document.getElementById('B');
 const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
-const next = document.getElementById("next");
-const prog = document.querySelector(".prog");
-
+let next = document.getElementById("next"),count = 0;
+const isRight = document.getElementById("is-right");
+let timeLeft = 75;
 let score = 0;
 
 const questions = [
@@ -54,11 +54,14 @@ const questions = [
         choiceC: "raspberrys",
         choiceD: "pear",
         correct: "c"
-    }
+    },
+    
 ];
 
-const lastQuestion = questions.length - 1;
+const lastQuestion = questions.length -1;
 let runningQuestion = 0;
+
+
 
 
 function renderQuestion() {
@@ -68,36 +71,32 @@ function renderQuestion() {
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
-}
 
-function nextQuestion(){
-    runningQuestion++;
-}
+    }
+
 
 function isCorrect(){
         score += 20
-        prog.textContent = `Correct!`;
-        
+        isRight.textContent = "Correct! Click the next button";
+        isRight.style.color = "palegreen";
         next.style.display = "block";
 }
 function isWrong(){
     timeLeft -= 10;
-    progress.textContent = `Incorrect!`
+    isRight.textContent = "Incorrect You lost 10 seconds";
+    isRight.style.color = "tomato";
     next.style.display = "block";
 }
 
-
 function checkAnswer(answer) {
-
     if (answer == questions[runningQuestion].correct) {
-        isCorrect();  
+        isCorrect();    
     } else {
-        isWrong();    
+        isWrong(); 
     }
 }
 
 
-let timeLeft = 75;
 function beginQuiz() {
     let timeInterval = setInterval(function () {
         timer.textContent = `Count Down: ${timeLeft}`;
@@ -108,14 +107,27 @@ function beginQuiz() {
         choices.style.display = "block";
         progress.textContent = `Score: ${score}`;
         renderQuestion();
-
         if (timeLeft === 0) {
-            timer.textContent = "TIME UP!";
             clearInterval(timeInterval);
+            gameOver();
+            timer.textContent = "TIME UP!";
+        } else
+            if(runningQuestion == lastQuestion){
+                clearInterval(timeInterval);
+                gameOver();
         }
     }, 1000)
 }
-
+function nextQuestion(){  
+        runningQuestion++;       
+    }
+    
+function gameOver(){
+    quiz.style.display = "none";
+    choices.style.display = "none";
+    text.style.display = "block";
+    text.textContent = `Game over! You got ${score}% of the questions right.`   
+}
 
 
 next.addEventListener("click",nextQuestion);
