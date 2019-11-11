@@ -22,11 +22,10 @@ body{
 }
 
 #box{
-    width:55vw;
-    height: 75vh;
-    margin-right: 50px;
+     width:55vw;
+    height: 80vh; 
     background-color:rgba(254,152,93,0.3);
-    border-radius: 5px;
+    border-radius: 6px;
     display:flex;
     align-items: flex-end;
     justify-content: center;   
@@ -73,11 +72,11 @@ body{
 }
 
 #main-text{
-    margin: -300px auto;
+    top:200px;
     text-align: center;
     position: absolute;
-    font-size: 3vw;
-    line-height: 50px;
+    font-size: 1.8vw;
+    line-height: 6vh;
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
     letter-spacing: 5px;
@@ -143,8 +142,8 @@ body{
     border-radius: 50%;
     margin: 18px;
     padding: 1px;
-    width: 120px;
-    height:120px;
+    width: 5em;
+    height:5em;
     display: inline-flex;
     text-align: center;
     justify-content: center;
@@ -170,12 +169,11 @@ body{
 }
 
 #reset{
-    
     font-size: 1.5rem;
-    margin-bottom: 450px;
+    margin: 200px auto;
     background-color:rgba(124,152,133,0.6);
-    width: 120px;
-    height:120px;
+    width: 110px;
+    height:110px;
     border-radius: 50%;
     padding: 6px;
     border-radius: 100px;
@@ -186,7 +184,6 @@ body{
 }
 #reset:hover{
     cursor: pointer;
-    /* color: rgba(124,152,133,0.5); */
     transform: rotate(360deg);
     transition: all ease 500ms;
 }
@@ -194,6 +191,34 @@ body{
     outline: none;
 }
 
+#leader{
+    font-size: 1.3rem;
+    margin: 200px auto;
+    background-color:rgba(124,152,133,0.6);
+    width: 110px;
+    height:110px;
+    border-radius: 50%;
+    padding: 6px;
+    border-radius: 100px;
+    font-family: 'Purple Purse', cursive;
+    letter-spacing: 0.3vw; 
+    box-shadow: 0px 0px 10px rgba(124,152,133,0.6);
+    border: 1px solid bisque;
+   text-decoration-line: none;
+}
+button #leader a:link{
+    text-decoration: none !important;
+    color:black;
+}
+a:focus{
+    color: black;
+    text-decoration: none !important;
+}
+#leader:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all ease 500ms;
+}
 
 #is-right{
     color: #b5d0af;

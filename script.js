@@ -12,6 +12,7 @@ const choiceD = document.getElementById('D');
 let resetBtn = document.getElementById("reset");
 const isRight = document.getElementById("is-right");
 const wrong = document.getElementById("is-wrong");
+const leader = document.getElementById("leader");
 let timeLeft = 75;
 let score = 0;
 
@@ -105,13 +106,12 @@ function checkAnswer(answer) {
 }
 function gameOver(){ 
     resetBtn.style.display = "block";
+    leader.style.display = "block";
     quiz.style.display = "none";
     choices.style.display = "none";
     text.style.display = "block";
     text.textContent = `Game over! You got ${score}% of the questions right.`;
-    timer.textContent = "TIME UP!";
-    //  clearInterval(timeInterval);
-    
+    timer.textContent = "TIME UP!";  
 }
 
 function beginQuiz() {
@@ -128,23 +128,14 @@ function beginQuiz() {
         keepCount();
         if (timeLeft === 0) {
             clearInterval(timeInterval);
-            gameOver();
-            
+            gameOver();      
         }
     }, 1000);
 }
 
-  function startOver(option){ 
-    confirm("Warning! You Will lose all progress if you dont save your progress");
-    if(option === true){
+  function startOver(){ 
         window.location.href  = "index.html";
-    }else{
-        window.location.href = "high-score.html"
-    }
-    
-         
-          }
-
+   }
 
 
 
