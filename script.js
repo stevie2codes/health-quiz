@@ -11,6 +11,7 @@ const choiceC = document.getElementById('C');
 const choiceD = document.getElementById('D');
 let next = document.getElementById("next"),count = 0;
 const isRight = document.getElementById("is-right");
+const wrong = document.getElementById("is-wrong");
 let timeLeft = 75;
 let score = 0;
 
@@ -58,11 +59,12 @@ const questions = [
     
 ];
 
-const lastQuestion = questions.length -1;
+const lastQuestion = questions.length ;
 let runningQuestion = 0;
 
 
-
+let rightAnswer = 0;
+let wrongAnswer = 0;
 
 function renderQuestion() {
     let q = questions[runningQuestion];
@@ -76,15 +78,15 @@ function renderQuestion() {
 
 
 function isCorrect(){
+        rightAnswer++;
         score += 20
-        isRight.textContent = "Correct! Click the next button";
-        isRight.style.color = "palegreen";
+        isRight.textContent = `Correct: ${rightAnswer}`;
         next.style.display = "block";
 }
 function isWrong(){
+    wrongAnswer++;
     timeLeft -= 10;
-    isRight.textContent = "Incorrect You lost 10 seconds";
-    isRight.style.color = "tomato";
+    wrong.textContent = `Incorrect: ${wrongAnswer}`;
     next.style.display = "block";
 }
 
@@ -111,24 +113,26 @@ function beginQuiz() {
             clearInterval(timeInterval);
             gameOver();
             timer.textContent = "TIME UP!";
-        } else
-            if(runningQuestion == lastQuestion){
+        } 
+            if(runningQuestion === lastQuestion){
                 clearInterval(timeInterval);
                 gameOver();
         }
     }, 1000)
 }
 function nextQuestion(){  
-        runningQuestion++;       
+        runningQuestion++;  
+             gameOver();
     }
     
 function gameOver(){
+    if(wrongAnswer + rightAnswer > 5){
     quiz.style.display = "none";
     choices.style.display = "none";
     text.style.display = "block";
     text.textContent = `Game over! You got ${score}% of the questions right.`   
 }
-
+}
 
 next.addEventListener("click",nextQuestion);
 start.addEventListener('click', beginQuiz);
