@@ -85,8 +85,8 @@ body{
 }
 
 #leader-board{
-    font-family: 'Raleway', sans-serif;
-    text-decoration: underline double rgba(124,152,133,0.5) ;
+    font-family: 'Purple Purse', cursive;
+    text-shadow: 1px 1px 2px rgba(254,152,93,0.4);
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
@@ -94,7 +94,7 @@ body{
     font-weight: bolder;
     display: inline-flex;
     flex-wrap: wrap;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 #leader-board:hover{
     cursor: pointer;
@@ -323,4 +323,24 @@ body{
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #item{
+    font-family: 'Raleway', sans-serif;
+  }
+  ul,li{
+    font-family: 'Raleway', sans-serif;
+    list-style-type: circle;
+  }
+
+  #clear-btn{
+    font-size: 1.5rem;
+    background-color:rgba(124,152,133,0.6);
+    width: 200px;
+    border-radius: 100px;
+    padding: 3px;
+    font-family: 'Purple Purse', cursive;
+    letter-spacing: 0.3vw; 
+    box-shadow: 0px 0px 10px rgba(124,152,133,0.9);
+    border: 1px solid bisque; 
   }
