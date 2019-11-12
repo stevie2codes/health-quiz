@@ -24,7 +24,7 @@ body{
 #box{
      width:55vw;
     height: 80vh; 
-    background-color:rgba(254,152,93,0.3);
+    background-color:rgba(254,152,93,0.4);
     border-radius: 6px;
     display:flex;
     align-items: flex-end;
@@ -148,7 +148,6 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
-
 }
 
 #A:hover,#B:hover,
@@ -250,32 +249,38 @@ a:focus{
 /* Modal box */
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color:rgba(124,152,133,0.4);
+   
   }
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    text-shadow: 1px 1px 2px black;
+    background-color:rgba(254,152,93,0.6);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    opacity: 0.9;
+    color: white;
+    font-size: 2rem;
+    font-family:'Purple Purse', cursive;
   }
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    text-shadow: 1px 1px 2px black;
+    color: whitesmoke;
     float: right;
-    font-size: 28px;
+    font-size: 5rem;
     font-weight: bold;
   }
   
