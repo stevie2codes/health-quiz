@@ -107,7 +107,7 @@ function checkAnswer(answer) {
 }
 function gameOver(){ 
     resetBtn.style.display = "block";
-    leader.style.display = "block";
+    save.style.display = "block";
     quiz.style.display = "none";
     choices.style.display = "none";
     text.style.display = "block";
@@ -142,29 +142,43 @@ resetBtn.addEventListener('click',startOver);
 start.addEventListener('click', beginQuiz);
 
 
-/* Modal Box */
+/* Save Score Modal Box */
 
 let modal = document.getElementById("myModal");
-let leader = document.getElementById("leader");
+let save = document.getElementById("save");
 let modHeader = document.getElementById("modal-header");
-
 let span = document.getElementsByClassName("close")[0];
 
-leader.onclick = function(){
+save.onclick = function(){
     modal.style.display = "block";
     modHeader.textContent = `You got ${score} pts!`;
 }
 
-
-
-
 span.onclick = function() {
     modal.style.display = "none";
-//    modHeader.textContent = `You got ${score} pts!`;
+    lbModal.style.display = "none";
 }
 window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
+      lbModal.style.display = "none";
     }
   }
+
+/* Leader board Modal Box */
+
+let lbBtn = document.getElementById("leader-board");
+let lbHeader = document.getElementById("lb-modal-header");
+let lbModal = document.getElementById("my-leaderboard-Modal");
+let lbSpan = document.getElementsByClassName("lb-close")[0];
+
+lbBtn.onclick = function(){
+    lbModal.style.display = "block";
+}
+
+lbSpan.onclick = function() {
+    lbModal.style.display = "none";
+}
+
+
 

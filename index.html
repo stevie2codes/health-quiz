@@ -45,13 +45,23 @@
                     <button id="start">Start Quiz!</button>
                     <button id="reset" style="display:none" name="fastforward">Play Again!</button>
                     <!-- <button id="leader"style="display:none" ><a href="high-score.html">Save score!</a></button> -->
-                    <button id="leader"style="display:none">Save Score!</button>
+                    <button id="save"style="display:none">Save Score!</button>
+
+                                <!--Highscore Input Modal-->
                     <div id="myModal" class = "modal">
                         <div class="modal-content">
                             <div id="modal-header"></div>
                             <span class="close">&times;</span>
-                            <input type="text">
-                            <label for="highscore">Enter your Initials</label>
+                            <input type="text" placeholder="Enter your initials to be placed in leaderboard!">
+                            <label for="highscore"></label>
+                        </div>
+                    </div>
+                                <!--Leaderboard Modal-->
+                    <div id="my-leaderboard-Modal" class = "lb-modal">
+                        <div class="leader-board-modal-content">
+                            <div id="lb-modal-header"></div>
+                            <span class="lb-close">&times;</span>
+                            <label for="leaderBoard">LeaderBoard</label>
                         </div>
                     </div>
                 </div>
