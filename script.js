@@ -83,6 +83,7 @@ function keepCount(){
         renderQuestion();
     }else{
         gameOver();
+        
     }
 }
 
@@ -145,15 +146,21 @@ start.addEventListener('click', beginQuiz);
 
 let modal = document.getElementById("myModal");
 let leader = document.getElementById("leader");
+let modHeader = document.getElementById("modal-header");
 
 let span = document.getElementsByClassName("close")[0];
 
 leader.onclick = function(){
     modal.style.display = "block";
+    modHeader.textContent = `You got ${score} pts!`;
 }
+
+
+
 
 span.onclick = function() {
     modal.style.display = "none";
+//    modHeader.textContent = `You got ${score} pts!`;
 }
 window.onclick = function(event) {
     if (event.target == modal) {

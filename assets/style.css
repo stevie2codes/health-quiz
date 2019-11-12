@@ -30,7 +30,7 @@ body{
     align-items: flex-end;
     justify-content: center;   
     border:2px solid rgba(124,152,133,0.5);
-    box-shadow: 0px 0px 10px rgba(124,152,133,0.5);
+    box-shadow: 1px 1px 10px rgba(124,152,133,0.5);
     position: relative;
     
 }
@@ -110,7 +110,7 @@ body{
     right:50px;
     font-family: 'Purple Purse', cursive;
     font-size: 3.5vw;
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 1px 1px 1px black;
 }
 
 
@@ -137,8 +137,8 @@ body{
 #A,#B,
 #C,#D{
     background-color:rgba(124,152,133,0.6);
-    box-shadow: 0px 0px 10px rgba(124,152,133,0.6);
-    border: 1px solid bisque;
+    box-shadow: 0px 0px 5px 1px rgba(124,152,133,0.6);
+    border: 0.2px solid bisque;
     border-radius: 50%;
     margin: 18px;
     padding: 1px;
@@ -227,7 +227,7 @@ a:focus{
     font-family: 'Purple Purse', cursive;
     font-size: 3vw;
     letter-spacing: 3px;
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 1px 1px 2px black;
 }
 
 #is-wrong{
@@ -238,15 +238,16 @@ a:focus{
     font-family: 'Purple Purse', cursive;
     font-size: 3vw;
     letter-spacing: 3px;
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 1px 1px 2px black;
 }
  
-
+/*leaderboard html*/
 .lb-head{
     font-family:Georgia, 'Times New Roman', Times, serif;  
 }
 
 /* Modal box */
+
 
 .modal {
     display: none; 
@@ -258,7 +259,6 @@ a:focus{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color:rgba(124,152,133,0.4);
-   
   }
   
   /* Modal Content/Box */
