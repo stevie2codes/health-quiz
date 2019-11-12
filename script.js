@@ -177,20 +177,25 @@ let lbSpan = document.getElementsByClassName("lb-close")[0];
 let form = document.getElementById('lb-form');
 let ul = document.querySelector('ul');
 let button = document.getElementById('clear-btn');
-let item = document.getElementById('item');
+let input = document.getElementById('item');
 
 save2.onclick = function(){
     modal.style.display = "block";
     modHeader.textContent = "High Scores";
-    item.style.display = "none";
+    input.style.display = "none";
     button.style.display = 'block';
-
 }
 
 lbSpan.onclick = function() {
     modal.style.display = "none";
 }
 
+let itemsArray = localStorage.getItem('items') ? 
+items = JSON.parse(localStorage.getItem('items')) : [];
+
+
+localStorage.setItem('items', JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem('items')); 
 
 const liMaker = text => {
     const li = document.createElement('li');
@@ -201,7 +206,21 @@ const liMaker = text => {
 modal.addEventListener('submit',function(e){
     e.preventDefault()
 
-    liMaker(item.value)
-    item.value = " ";
+    itemsArray.push(input.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    liMaker(input.value)
+   input.value = "";
 })
+
+data.forEach(item => {
+    liMaker(item)
+});
+
+
+button.addEventListener('click',function(){
+    localStorage.clear()
+    while(ul.firstChild) {
+        ul.removeChild(ul.firstChild)
+    }
+});
 
