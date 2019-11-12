@@ -151,7 +151,9 @@ let span = document.getElementsByClassName("close")[0];
 
 save.onclick = function(){
     modal.style.display = "block";
+    item.style.display = "block";
     modHeader.textContent = `You got ${score} pts!`;
+    button.style.display = 'none';
 }
 
 span.onclick = function() {
@@ -167,18 +169,39 @@ window.onclick = function(event) {
 
 /* Leader board Modal Box */
 
-let lbBtn = document.getElementById("leader-board");
+let save2 = document.getElementById("leader-board");
 let lbHeader = document.getElementById("lb-modal-header");
 let lbModal = document.getElementById("my-leaderboard-Modal");
 let lbSpan = document.getElementsByClassName("lb-close")[0];
 
-lbBtn.onclick = function(){
-    lbModal.style.display = "block";
+let form = document.getElementById('lb-form');
+let ul = document.querySelector('ul');
+let button = document.getElementById('clear-btn');
+let item = document.getElementById('item');
+
+save2.onclick = function(){
+    modal.style.display = "block";
+    modHeader.textContent = "High Scores";
+    item.style.display = "none";
+    button.style.display = 'block';
+
 }
 
 lbSpan.onclick = function() {
-    lbModal.style.display = "none";
+    modal.style.display = "none";
 }
 
 
+const liMaker = text => {
+    const li = document.createElement('li');
+    li.textContent = text + ` ${score} pts` ;
+    ul.appendChild(li);
+}
+
+modal.addEventListener('submit',function(e){
+    e.preventDefault()
+
+    liMaker(item.value)
+    item.value = " ";
+})
 
