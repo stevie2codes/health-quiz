@@ -12,7 +12,7 @@ const choiceD = document.getElementById('D');
 let resetBtn = document.getElementById("reset");
 const isRight = document.getElementById("is-right");
 const wrong = document.getElementById("is-wrong");
-const leader = document.getElementById("leader");
+
 let timeLeft = 75;
 let score = 0;
 
@@ -137,7 +137,23 @@ function beginQuiz() {
         window.location.href  = "index.html";
    }
 
-
-
 resetBtn.addEventListener('click',startOver);
 start.addEventListener('click', beginQuiz);
+
+
+/* Modal Box */
+
+let modal = document.getElementById("myModal");
+let leader = document.getElementById("leader");
+
+let span = document.getElementsByClassName("close")[0];
+
+leader.onclick = function(){
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
