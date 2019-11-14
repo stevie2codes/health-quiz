@@ -200,26 +200,32 @@ lbSpan.onclick = function () {
 
 const liMaker = text => {
     const li = document.createElement('li');
-    li.textContent = text + ` ${score} pts`;
+    li.textContent = text;
     ul.appendChild(li);
 }
 
-let itemsArray = [];
-localStorage.setItem("items", JSON.stringify(itemsArray));
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
 
-modal.addEventListener("submit", function (event) {
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
+
+modal.addEventListener('submit',function(event){
     event.preventDefault();
+
+    itemsArray.push(input.value + ` ${score} points`);
+    localStorage.setItem('items', JSON.stringify(itemsArray))
     liMaker(input.value);
-    itemsArray.push(input.value + ' '+ score);
+    input.value = "";
 })
 
-localStorage.getItem("items",);
+data.forEach(item => {
+    liMaker(item)
+  })
 
-let data = JSON.parse(localStorage.getItem("items"));
-
-button.addEventListener("click",function(){
-    preventDefault();
-    localStorage.clear();
-})
-
+  button.addEventListener('click', function() {
+    localStorage.clear()
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild)
+    }
+  })
 
