@@ -19,6 +19,8 @@ body{
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    animation-delay: 400ms;
+    transition: all ease-in;
 }
 
 #box{
@@ -95,6 +97,8 @@ body{
     display: inline-flex;
     flex-wrap: wrap;
     font-size: 3vw;
+    animation-delay:1.5s;
+    transition: all ease-in 400ms;
 }
 #leader-board:hover{
     cursor: pointer;
@@ -102,15 +106,17 @@ body{
 
 #timer{
     color: #f76563;
-    display: inline-flex;
+    display: block;
     flex-wrap: wrap;
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
     right:50px;
     font-family: 'Purple Purse', cursive;
-    font-size: 3.5vw;
+    font-size: 3.0vw;
     text-shadow: 1px 1px 1px black;
+    animation-delay:1.5s;
+    transition: all ease-in 400ms;
 }
 
 
@@ -184,6 +190,7 @@ body{
 #reset:hover{
     cursor: pointer;
     transform: rotate(360deg);
+    background-color:rgba(124,152,133,1);
     transition: all ease 500ms;
 }
 #reset:focus{
@@ -204,6 +211,12 @@ body{
     box-shadow: 0px 0px 10px rgba(124,152,133,0.6);
     border: 1px solid bisque;
    text-decoration-line: none;
+}
+
+#save:hover{
+    background-color:rgba(124,152,133,1);
+    transform: scale(1.03);
+    transition: all ease-in 200ms;
 }
 
 #leader:hover{
