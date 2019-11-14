@@ -1,3 +1,6 @@
+![screenshot](assets/images/screenshot.png)
+
+
 # health-quiz
 A multiple choice health quiz that will be timed response and provide an answer after users guess with a collection of correct answers. 
 
@@ -29,14 +32,18 @@ Applied animate.css cdn for some animations
 
 ## Authors
 
-* **Stephen Webb** - *Initial work* - [Stephen Webb](https://stevie2codes.github.io/health-quiz/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Stephen Webb** - *Health Quiz* - [Stephen Webb](https://stevie2codes.github.io/health-quiz/)
 
 
 ## Acknowledgments
 
-* Photo by Brooke Lark on Unsplash
+* BackGround Photo by Brooke Lark on Unsplash
 * Project guidlines provided by Vanderbilt bootcamp
 
+
+## What I learned 
+
+I of course had fun with the CSS on this project, learning new animations. 
+I had several hurdles to jump over to get through this project. Carrying functions into functions was an AHA moment for me. Using Web API's 
+like setInterval() was alot of fun to use. I feel naming variables is becoming more second nature and allows me to remeber functions in the program. Using local storage in this project was the hardest thing for me to get functional. I look forward to applying it to future projects to overcome any weak spots. 
 
