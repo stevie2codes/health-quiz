@@ -32,7 +32,7 @@ Applied animate.css cdn for some animations
 
 ## Authors
 
-* **Stephen Webb** - *Health Quiz* - [Stephen Webb](https://stevie2codes.github.io/health-quiz/)
+* **Stephen Webb** - *Initial Work* - [Health Quiz](https://stevie2codes.github.io/health-quiz/)
 
 
 ## Acknowledgments
