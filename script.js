@@ -16,6 +16,8 @@ const wrong = document.getElementById("is-wrong");
 let timeLeft = 75;
 let score = 0;
 
+let totalScore = score + timeLeft;
+
 //Quiz Questions//
 const questions = [
     {
@@ -75,15 +77,15 @@ function renderQuestion() {
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
-    
+
 }
 //keeping count of amount of questions rendered
-function keepCount(){
-    if(runningQuestion < lastQuestion){   
+function keepCount() {
+    if (runningQuestion < lastQuestion) {
         renderQuestion();
-    }else{
+    } else {
         gameOver();
-        
+
     }
 }
 
@@ -105,14 +107,14 @@ function checkAnswer(answer) {
         isWrong();
     }
 }
-function gameOver(){ 
+function gameOver() {
     resetBtn.style.display = "block";
     save.style.display = "block";
     quiz.style.display = "none";
     choices.style.display = "none";
     text.style.display = "block";
-    text.textContent = `Game over! You got ${score}% of the questions right.`;
-    timer.textContent = "TIME UP!";  
+    text.textContent = `Game over!  ${score} is your total score.`;
+    timer.textContent = "TIME UP!";
 }
 
 function beginQuiz() {
@@ -129,16 +131,16 @@ function beginQuiz() {
         keepCount();
         if (timeLeft === 0) {
             clearInterval(timeInterval);
-            gameOver();      
+            gameOver();
         }
     }, 1000);
 }
 
-  function startOver(){ 
-        window.location.href  = "index.html";
-   }
+function startOver() {
+    window.location.href = "index.html";
+}
 
-resetBtn.addEventListener('click',startOver);
+resetBtn.addEventListener('click', startOver);
 start.addEventListener('click', beginQuiz);
 
 
@@ -149,23 +151,23 @@ let save = document.getElementById("save");
 let modHeader = document.getElementById("modal-header");
 let span = document.getElementsByClassName("close")[0];
 
-save.onclick = function(){
+save.onclick = function () {
     modal.style.display = "block";
     item.style.display = "block";
     modHeader.textContent = `You got ${score} pts!`;
     button.style.display = 'none';
 }
 
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
     lbModal.style.display = "none";
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
-      modal.style.display = "none";
-      lbModal.style.display = "none";
+        modal.style.display = "none";
+        lbModal.style.display = "none";
     }
-  }
+}
 
 /* Leader board Modal Box */
 
@@ -179,48 +181,85 @@ let ul = document.querySelector('ul');
 let button = document.getElementById('clear-btn');
 let input = document.getElementById('item');
 
-save2.onclick = function(){
+save2.onclick = function () {
     modal.style.display = "block";
     modHeader.textContent = "High Scores";
     input.style.display = "none";
     button.style.display = 'block';
 }
 
-lbSpan.onclick = function() {
+lbSpan.onclick = function () {
     modal.style.display = "none";
 }
 
-let itemsArray = localStorage.getItem('items') ? 
-items = JSON.parse(localStorage.getItem('items')) : [];
-
-
-localStorage.setItem('items', JSON.stringify(itemsArray));
-const data = JSON.parse(localStorage.getItem('items')); 
+//add an event listner to create an li when submit is hit
+//add the name entered and the score to the li
+//set local storage 
+//get local storage
+//clear local storage
 
 const liMaker = text => {
     const li = document.createElement('li');
-    li.textContent = text + ` ${score} pts` ;
+    li.textContent = text + ` ${score} pts`;
     ul.appendChild(li);
 }
 
-modal.addEventListener('submit',function(e){
-    e.preventDefault()
+let itemsArray = [];
+localStorage.setItem("items", JSON.stringify(itemsArray));
 
-    itemsArray.push(input.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
-    liMaker(input.value)
-   input.value = "";
+modal.addEventListener("submit", function (event) {
+    event.preventDefault();
+    liMaker(input.value);
+    itemsArray.push(input.value + ' '+ score);
 })
 
-data.forEach(item => {
-    liMaker(item)
-});
+localStorage.getItem("items",);
+
+let data = JSON.parse(localStorage.getItem("items"));
+
+button.addEventListener("click",function(){
+    preventDefault();
+    localStorage.clear();
+})
 
 
-button.addEventListener('click',function(){
-    localStorage.clear()
-    while(ul.firstChild) {
-        ul.removeChild(ul.firstChild)
-    }
-});
+
+
+
+
+
+
+// let itemsArray = localStorage.getItem('items') ? 
+// items = JSON.parse(localStorage.getItem('items')) : [];
+
+
+// localStorage.setItem('items', JSON.stringify(itemsArray));
+// const data = JSON.parse(localStorage.getItem('items')); 
+
+// const liMaker = text => {
+//     const li = document.createElement('li');
+//     li.textContent = text + `${score} pts` ;
+//     ul.appendChild(li);
+// }
+
+// modal.addEventListener('submit',function(e){
+//     e.preventDefault()
+
+//     itemsArray.push(input.value);
+//     localStorage.setItem('items', JSON.stringify(itemsArray));
+//     liMaker(input.value)
+//    input.value = "";
+// })
+
+// data.forEach(item => {
+//     liMaker(item)
+// });
+
+
+// button.addEventListener('click',function(){
+//     localStorage.removeItem("ul");
+//     // while(ul.firstChild) {
+//     //     ul.removeChild(ul.firstChild)
+//     // }
+// });
 
