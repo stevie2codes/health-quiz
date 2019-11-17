@@ -16,7 +16,7 @@ const wrong = document.getElementById("is-wrong");
 let timeLeft = 75;
 let score = 0;
 
-let totalScore = score + timeLeft;
+
 
 //Quiz Questions//
 const questions = [
