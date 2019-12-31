@@ -74,16 +74,16 @@ body{
 }
 
 #main-text{
-    top:100px;
+    top: 50px;
+    margin: 15px;
     text-align: center;
     position: absolute;
-    font-size: 1.8vw;
-    line-height: 6vh;
+    font-size: 2.5vmax;
+    line-height: 2rem;
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
-    letter-spacing: 5px;
-    display:flex;
-    flex-wrap: wrap;
+    letter-spacing: 2px;
+
 }
 
 #leader-board{
@@ -92,11 +92,11 @@ body{
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
-    left:10px;
+    left:5px;
     font-weight: bolder;
     display: inline-flex;
     flex-wrap: wrap;
-    font-size: 2.8vw;
+    font-size: 2.5vmax;
     animation-delay:1.5s;
     transition: all ease-in 400ms;
 }
@@ -111,9 +111,9 @@ body{
     letter-spacing: 1px;
     position: absolute;
     top: 10px;
-    right:20px;
+    right:5px;
     font-family: 'Purple Purse', cursive;
-    font-size: 2.8vw;
+    font-size: 2.5vmax;
     text-shadow: 1px 1px 1px black;
     animation-delay:1.5s;
     transition: all ease-in 400ms;
@@ -123,8 +123,8 @@ body{
 #quiz{
     font-family: 'Raleway', sans-serif;
     position: absolute;
-    top: 90px;
-    font-size: 1.5rem;
+    top: 10vh;
+    font-size: 3vmax;
     text-align:center;
     justify-content: center;
     align-items: center;
@@ -133,8 +133,8 @@ body{
 #choices{
     font-family: 'Raleway', sans-serif;
     position: absolute;
-    top: 220px;
-    font-size: 1.2rem;
+    top: 180px;
+    font-size: 1.7vmax;
     text-align:center;
     justify-content: center;
     align-items: center;
@@ -148,8 +148,8 @@ body{
     border-radius: 50%;
     margin: 10px;
     padding: 1px;
-    width: 5em;
-    height:5em;
+    width: 17vmin;
+    height:17vmin;
     display:inline-flex;
     text-align: center;
     justify-content: center;
@@ -169,7 +169,7 @@ body{
     position: absolute;
     margin: 0 auto;
     font-family: 'Purple Purse', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 3px;
 }
 
@@ -228,10 +228,10 @@ body{
 #is-right{
     color: #b5d0af;
     position: absolute;
-    left: 20px;
+    left: 10px;
     bottom: 50px;
     font-family: 'Purple Purse', cursive;
-    font-size: 3vw;
+    font-size: 2.8vmax;
     letter-spacing: 3px;
     text-shadow: 1px 1px 2px black;
 }
@@ -239,11 +239,11 @@ body{
 #is-wrong{
     color:#f76563;
     position: absolute;
-    right: 20px;
+    right: 10px;
     bottom: 50px;
     font-family: 'Purple Purse', cursive;
-    font-size: 3vw;
-    letter-spacing: 3px;
+    font-size: 2.8vmax;
+    letter-spacing: 1px;
     text-shadow: 1px 1px 2px black;
 }
  
